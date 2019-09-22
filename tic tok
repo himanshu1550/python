@@ -1,0 +1,44 @@
+
+def overall_data(a):
+    print(   'a','b','c')
+    count=0    
+    for count,i in enumerate(a):
+        print(count,i)
+
+def validate(x_axis,y_axis):
+    if a[x_axis][y_axis]==1:
+        print('sorry you cant change')
+    else:
+        a[x_axis][y_axis]=1
+        overall_data(a)
+        Game_over(a)
+        
+def Game_over(a):
+    for trail in a:
+        if (all(trail) and (1 in trail)):
+            print('gameover')
+            break
+        else:
+            print('nothing')
+            break
+            #data()
+        
+        
+        
+        
+
+def start():
+  #  print("hello Yo want to play? press Y/N")
+   # play=str(input())
+    
+    overall_data(a)
+    data()
+    
+def data():
+    print('you chance make it as 0 or 1')
+    x_axis=0#int(input())
+    y_axis=1#int(input())
+    validate(x_axis,y_axis)
+    
+a=[[1,0,0],[0,0,0],[0,0,0]]    
+start()
