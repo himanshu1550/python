@@ -1,4 +1,33 @@
 
+def win(a):
+    for row in a:
+        if (row.count(row[0])==len(row) and row[0]!=0):
+            print('winner')
+            
+                
+    for row in range(len(a)):
+        check=[]
+        for value in a:
+            check.append(value[row])
+            
+        if (check.count(check[0])==len(check) and check[0]!=0):
+            print('winner verticaly')        
+    
+    diag=[]    
+    for ix in range(len(a)):
+        diag.append(a[ix][ix])
+    if (diag.count(diag[0])==len(diag) and diag[0]!=0):
+            print('winner_diag \\')
+            
+    diag1=[]    
+    for row, coa in enumerate(reversed(range(len(a)))):
+        diag1.append(a[row][coa])
+    if (diag1.count(diag1[0])==len(diag1) and diag1[0]!=0):
+            print('winner_diag /')
+    
+    
+    
+    
 def overall_data(a):
     print(   'a','b','c')
     count=0    
@@ -11,17 +40,9 @@ def validate(x_axis,y_axis):
     else:
         a[x_axis][y_axis]=1
         overall_data(a)
-        Game_over(a)
+        win(a)
         
-def Game_over(a):
-    for trail in a:
-        if (all(trail) and (1 in trail)):
-            print('gameover')
-            break
-        else:
-            print('nothing')
-            break
-            #data()
+
         
         
         
@@ -36,9 +57,9 @@ def start():
     
 def data():
     print('you chance make it as 0 or 1')
-    x_axis=0#int(input())
-    y_axis=1#int(input())
+    x_axis=int(input())
+    y_axis=int(input())
     validate(x_axis,y_axis)
     
-a=[[1,0,0],[0,0,0],[0,0,0]]    
+a=[[1,0,0],[1,1,0],[0,0,0]]    
 start()
